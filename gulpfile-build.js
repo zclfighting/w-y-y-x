@@ -28,7 +28,7 @@ async function script(){
 // 处理sass
 async function sass(){
   src('./sass/*.scss')
-  .pipe(load.sassChina())// sass转成css
+  .pipe(load.sass())// sass转成css
   .pipe(load.minifyCss())// 压缩css
   .pipe(load.rev())// 给文件名添加哈希值
   .pipe(dest('./dist/css'))// 保存
