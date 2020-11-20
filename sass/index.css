@@ -1,86 +1,105 @@
-@charset "UTF-8";
-/* 标题样式 */
-h1 {
-  width: 400px;
-  height: 200px;
-  color: red;
-  background-color: #ccc;
+body {
+  min-height: 100%;
+  min-width: 1090;
+  background-color: #fff;
+  overflow: auto;
+  margin-right: 0px;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
 }
 
-.box {
-  width: 400px;
-  background-color: lightblue;
+.header {
+  background-color: black;
+  width: 100%;
+  height: 36px;
+  color: white;
 }
 
-.box h2 {
-  font-size: 30px;
-  color: blue;
+.contain {
+  width: 1090px;
+  margin: 0 auto;
 }
 
-.box .show {
-  width: 300px;
-  height: 100px;
+.header-next {
+  overflow: hidden;
 }
 
-.box .show span {
-  color: red;
+.header-next span {
+  color: orange;
+  line-height: 36px;
 }
 
-.box .show p {
-  color: yellow;
+.header-next span a {
+  color: orange;
+  text-decoration: underline;
 }
 
-a {
-  color: blue;
+.header-next ul {
+  float: right;
 }
 
-a:hover {
-  color: red;
+.header-next ul li {
+  float: left;
+  line-height: 36px;
 }
 
-.content {
-  width: 500px;
+.header-next ul li span {
+  color: white;
+  display: inline-block;
+  margin-top: -2px;
+  margin: 0 10px;
 }
 
-.content-title {
-  color: red;
+.header-next ul li a span {
+  transform: rotate(180deg);
 }
 
-.content-main {
-  color: blue;
+.header-next ul li :nth-last-child() {
+  position: relative;
+  overflow: hidden;
 }
 
-.list {
-  width: 500px;
-  list-style: none;
+.header-next ul li :nth-last-child() .ma {
+  width: 140px;
+  height: 156px;
+  border: 1px solid black;
+  right: 400px;
+  color: orange;
+  margin: 10px auto 0;
+  position: absolute;
 }
 
-.list li {
-  padding: 0;
-  color: blue;
+.header-next ul li :nth-last-child() .ma .tupian {
+  margin-top: 6px;
+  height: 156px;
+  width: 140px;
 }
 
-.box1 {
-  background-color: #ccc;
-  width: 500px;
-  height: 200px;
-  color: red;
+.header-next ul li :nth-last-child() .ma .tupian img {
+  width: 120px;
+  height: 120px;
+  margin: 10px auto 0;
+  display: block;
 }
 
-.box2 {
-  padding: 10px;
-  width: 300px;
-  height: 100px;
-  color: blue;
+.header-next ul li :nth-last-child() .ma .tupian span {
+  display: block;
+  font-size: 10px;
+  color: olivedrab;
 }
 
-.box3, .box4 {
-  padding: 20px;
-  margin: 10px;
-  font-size: 20px;
+.header-next ul li :nth-last-child():hover div {
+  display: block;
 }
 
-.box4 {
-  width: 500px;
-  background: pink;
+.header-next ul li .sanjiao {
+  border-bottom: 6px solid white;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-top: 6px solid transparent;
+  position: absolute;
+  z-index: 9;
+  bottom: 0px;
+  right: 370px;
 }
