@@ -22,6 +22,13 @@ task('script', async ()=>{
   .pipe(dest('./dist/js'))
   .pipe(load.connect.reload())
 })
+//chuli json
+task('json', async ()=>{
+  src('./json/*.json')
+  // .pipe(load.babel({ presets: ['@babel/env']}))
+  .pipe(dest('./dist/json'))
+  .pipe(load.connect.reload())
+})
 
 // 处理HTML
 task('html', async ()=>{
@@ -60,4 +67,4 @@ task('connect', async ()=>{
   })
 })
 
-task('dev', series('delDist','img','html','script','sass','connect','watch'))
+task('dev', series('delDist','img','html','json','script','sass','connect','watch'))
