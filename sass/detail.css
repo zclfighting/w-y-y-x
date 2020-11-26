@@ -635,12 +635,49 @@ img {
   width: 430px;
   height: 522px;
   margin-right: 16px;
+  position: relative;
 }
 
-.fdj .box1 img {
+.fdj .box1 .box11 {
+  width: 428px;
+  height: 428px;
+  position: relative;
+}
+
+.fdj .box1 .box11 img {
   width: 428px;
   height: 428px;
   margin: 0;
+  position: relative;
+}
+
+.fdj .box1 .box11 .mask {
+  width: 214px;
+  height: 214px;
+  background-color: #999;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.fdj .box1 .box2 {
+  display: none;
+  width: 428px;
+  height: 428px;
+  position: absolute;
+  left: 440px;
+  top: 0px;
+  overflow: hidden;
+}
+
+.fdj .box1 .box2 .bigger-img {
+  position: absolute;
+  width: 856px;
+  height: 856px;
+  margin-top: -20px;
+  padding: 0;
 }
 
 .fdj .box1 .tab_img {

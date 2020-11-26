@@ -10,10 +10,7 @@ var mySwiper = new Swiper('.swiper-container', {
   },
 
   // 如果需要分页器
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+  
 
   // 如果需要前进后退按钮
   navigation: {
@@ -62,7 +59,7 @@ window.onscroll = function (e) {
     list.style.zIndex = '999999';
     list.style.borderBottom = '1px solid black';
     for (var i = 0; i < list_ul.length; i++) {
-      list_ul[i].style.marginTop = '18px';
+      list_ul[i].style.marginTop = '10px';
     }
   } else {
     list.style.paddingTop = '0';
@@ -91,7 +88,7 @@ window.onscroll = function (e) {
     right.style.position = 'absolute';
     right.style.top = '525px';
   }
-
+   
 
 }
 
@@ -121,18 +118,26 @@ function success(data) {
   // list_ul;
   // var dd=document.createElement('dd');
   // dd.innerHTML=item.subCateGroupList[index].name;
-  for(var i =0;i<list_ul.length;i++){
-    console.log(data.data.cateList)
+/*   for(var i =0;i<list_ul.length;i++){
+    console.log(data.data.cateList);
+    var sp = document.createDocumentFragment();
     data.data.cateList.forEach(function (item, index) {
-      // list_ul[i].innerHTML = ' <li><dl><dd>'+item.name+'</dd></dl></li>';
-      // var s=item.subCateGroupList;
-      // for(var j=0;j<s.length;j++){
-      //   var sp = document.createDocumentFragment();
-      //   var dt=document.createElement('dt');
-      //   dt.innerHTML= "<dt><img src="+s[i].bannerUrl +" alt=''>"+s[i].name+"</dt>";
-      //   sp.appendChild(dt);
-      // }
-      // list_ul[i].children[0].children[0].appendChild(sp);
+       var all_list=item.subCateGroupList ;
+       for(var j=0;j<all_list.length;j++){
+         list_ul[i].innerHTML = ' <li><dl><dd>'+all_list[j].name+'</dd></dl></li>';
+         for(var k=0;k<all_list[j].categoryList.length;k++){
+            var dt=document.createElement('dt');  
+            dt.innerText=all_list[j].categoryList[k].name;
+            var img=new Image();
+            img.src=all_list[j].categoryList[k].bannerUrl;
+            dt.appendChild(img);
+            // dt.innerHTML= "<dt><img src="+all_list[j].categoryList[k].bannerUrl +" alt=''>"+all_list[j].categoryList[k].name+"</dt>";
+            sp.appendChild(dt);
+         }
+         list_ul[i].children[0].children[0].appendChild(sp);
+         console.log(list_ul);
+       }
     })
-  }
-}
+  }*/
+
+} 
