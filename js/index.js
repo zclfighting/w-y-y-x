@@ -106,7 +106,10 @@ xhr.onreadystatechange = function () {
   if (xhr.readyState === 4) {
     if (xhr.status === 200) {
       var json = JSON.parse(xhr.responseText);
+
+      // console.log(json)
       success(json);
+      
     }
   } else {
     console.log(xhr.status);
@@ -118,26 +121,26 @@ function success(data) {
   // list_ul;
   // var dd=document.createElement('dd');
   // dd.innerHTML=item.subCateGroupList[index].name;
-/*   for(var i =0;i<list_ul.length;i++){
-    console.log(data.data.cateList);
-    var sp = document.createDocumentFragment();
-    data.data.cateList.forEach(function (item, index) {
-       var all_list=item.subCateGroupList ;
-       for(var j=0;j<all_list.length;j++){
-         list_ul[i].innerHTML = ' <li><dl><dd>'+all_list[j].name+'</dd></dl></li>';
-         for(var k=0;k<all_list[j].categoryList.length;k++){
-            var dt=document.createElement('dt');  
-            dt.innerText=all_list[j].categoryList[k].name;
-            var img=new Image();
-            img.src=all_list[j].categoryList[k].bannerUrl;
-            dt.appendChild(img);
-            // dt.innerHTML= "<dt><img src="+all_list[j].categoryList[k].bannerUrl +" alt=''>"+all_list[j].categoryList[k].name+"</dt>";
-            sp.appendChild(dt);
-         }
-         list_ul[i].children[0].children[0].appendChild(sp);
-         console.log(list_ul);
-       }
-    })
-  }*/
-
+  var datas=data.data.cateList;
+  for(var i=0;i<list_ul.length;i++){
+    datas.forEach(function(item,index){
+      item.subCateGroupList.forEach(function(ite,index){
+          var li=document.createElement('li');
+          var dl=document.createElement('dl');
+          var dd=document.createElement('dd');
+          dd.innerHTML=ite.name;
+          dl.appendChild(dd);
+          ite.categoryList.forEach(function(it,ins){
+              var dt=document.createElement('dt');
+              var img=new Image();
+              img.src=it.bannerUrl;
+              dt.innerHTML=it.name;
+              dt.appendChild(img);
+              dl.appendChild(dt);
+          });
+          li.appendChild(dl);
+          list_ul[i].appendChild(li);  
+      })
+   })
+  }
 } 

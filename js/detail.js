@@ -99,19 +99,57 @@ as.addEventListener('click', function (e) {
 
 
 var  little=document.querySelector('.little');
-var  num=document.querySelector('.dec input');
 var  add=document.querySelector('.add');
-console.log(num);
 little.addEventListener('click',function(){
+  var  num=document.querySelector('.dec input');
   var text=num.value;
-  if(text==0){
-    num.value=0;
+  if(text==1){
+    num.value=1;
   }else
-    num.value=parseInt(text)--;
+    num.value=parseInt(text)-1;
 });
 add.addEventListener('click',function(){
+  var  num=document.querySelector('.dec input');
   var text=num.value;
-  console.log(text);
-    num.value=parseInt(text)++;
+    num.value=parseInt(text)+1;
+});
+
+
+
+
+
+var buying=document.querySelector('.buying');
+buying.addEventListener('click',function(){
+  alert('没做');
+})
+var reject=document.querySelector('.reject');
+reject.addEventListener('click',function(){
+  alert('也没做');
 })
 
+var car = document.querySelector('.addCar');
+// console.log(car);
+var title_info=document.querySelector('.title_info');
+var box11=document.querySelector('.box11 img');
+var price=document.querySelector('.price');
+var num=document.querySelector('.num input');
+car.addEventListener('click',function(e){
+  
+   if(!localStorage.getItem('goods')){
+     var data={};
+    //  data['img']='img/fdj.webp.jpg';
+     data['price']=price.innerText;
+     data['title_info']=title_info.innerText;
+     data['num']=num.value;
+     var datas=JSON.stringify(data);
+    //  console.log(datas);
+    localStorage.setItem('goods',datas);
+   }else if(localStorage.getItem('goods')){
+      var data=localStorage.getItem('goods');
+      data=JSON.parse(data);
+      data['num']=parseInt(data['num'])+parseInt(num.value);
+      var datas=JSON.stringify(data);
+      localStorage.setItem('goods',datas);
+   }
+   alert('加入购物车');
+})

@@ -228,27 +228,18 @@ img {
 }
 
 .list li a {
+  float: left;
   font-size: 14px;
   font-weight: bold;
   color: black;
-}
-
-.list li:hover a {
-  color: #D89553;
-  border-bottom: 2px solid #D89553;
-}
-
-.list li:hover .list_ul {
-  display: block;
 }
 
 .list_ul {
   display: none;
   position: absolute;
   z-index: 999;
-  background-color: #ccc;
+  background-color: white;
   top: 20px;
-  width: 1090px;
   left: 0px;
   top: 20px;
 }
@@ -268,7 +259,7 @@ img {
 
 .list_ul li dl dd {
   width: 120px;
-  height: 40px;
+  height: 60px;
   font-size: 16px;
   line-height: 50px;
   border-bottom: 2px solid #999;
@@ -276,14 +267,54 @@ img {
 
 .list_ul li dl dt {
   width: 120px;
-  height: 40px;
+  height: 60px;
   vertical-align: middle;
+  line-height: 50px;
+  font-size: 12px;
 }
 
 .list_ul li dl dt img {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  float: right;
+}
+
+.list li:hover a {
+  color: #D89553;
+  border-bottom: 2px solid #D89553;
+}
+
+.list li:hover .list_ul {
+  display: block;
+}
+
+.list li:hover .a {
+  display: block;
+}
+
+.list li:hover .b {
+  display: block;
+}
+
+.list li:hover .c {
+  display: block;
+}
+
+.list li:hover .d {
+  display: block;
+}
+
+.list li:hover .e {
+  display: block;
+}
+
+.list li:hover .f {
+  display: block;
+}
+
+.list li:hover .g {
+  display: block;
 }
 
 .footer_first {
